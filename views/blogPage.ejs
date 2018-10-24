@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blog page</title>
+    <style type="text/css">
+    body{
+        background-color:bisque;
+    }
+    #title{
+        width:80%;
+        height:40px;
+    }
+    #content{
+        width:80%;
+        height:200px;
+
+    }
+    </style>
+</head>
+<body>
+    <form action="/insert" method="POST">
+        <h2>Title:</h2><input type="text" id="title" name="title">
+        <p>
+               <h2>Post:</h2> <textarea id="content" name="content"></textarea>
+        </p>
+        
+        <button>Submitt</button>
+       
+    </form>
+    <form>
+        <form action="/delete" method="POST">
+            <button>Delete</button>
+               
+        </form>
+        
+        <button id ="edit" >Edit</button>
+    </form>
+    <hr />
+     <% 
+     for (var i=0;i<posts.length;i++) {
+    %>
+        Title: <%= posts[i].title %> <br/>
+        Content: <%= posts[i].content %> <br/>
+    <% } %>  
+</body>
+</html>
